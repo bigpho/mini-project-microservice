@@ -1,0 +1,15 @@
+services:
+  transaksi-service:
+    image: transaksi-service:latest
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: >-
+        -Dspring.datasource.url=jdbc:postgresql://db:5433/postgres
+    container_name: transaksi-service
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
