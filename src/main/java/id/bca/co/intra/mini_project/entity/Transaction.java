@@ -11,15 +11,17 @@ import java.util.Date;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long tran_id;
 
     @Temporal(TemporalType.DATE)
     private Date tran_date;
 
     private Double amount;
 
-    @Enumerated(EnumType.STRING)
-    private TransactionType tran_type;
+//    @Enumerated(EnumType.STRING)
+//    private TransactionType tran_type;
+
+    private String tran_type;
 
     private String norek_asal;
 
@@ -27,8 +29,10 @@ public class Transaction {
     
     private String notes;
 
-    public enum TransactionType{
-        D,
-        C
-    }
+//    public enum TransactionType{
+//        D,
+//        C
+//    }
+
+    private Long cust_id;
 }
